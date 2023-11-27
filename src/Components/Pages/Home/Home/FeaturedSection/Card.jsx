@@ -6,7 +6,7 @@ const Card = ({ item }) => {
   const { sectionTitle, feature, img } = item;
 
   return (
-    <div className="card rounded-none  bg-slate-200 ">
+    <div className="card rounded-none  bg-slate-300 ">
       <div className="card-body ">
         <h2 className="card-title text-base text-[#f47520] font-bold">{sectionTitle}</h2>
         <p className="lg:text-3xl text-2xl lg:w-3/4 font-bold">{feature}</p>

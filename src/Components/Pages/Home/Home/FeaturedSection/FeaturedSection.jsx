@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 
 const FeaturedSection = () => {
     const [featured, setFeatured] = useState();
 
     useEffect(() => {
-        fetch('../../../../../../public/features.json')
+        fetch('/features.json')
           .then((res) => res.json())
           .then((data) => setFeatured(data));
       },[]);
