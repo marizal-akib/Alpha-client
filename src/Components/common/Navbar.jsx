@@ -1,30 +1,30 @@
-import { Link } from "react-router-dom/dist";
+import { Link, NavLink } from "react-router-dom/dist";
 
 const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <Link to="/gallery">Gallery</Link>
+        <NavLink to="/gallery">Gallery</NavLink>
       </li>
       <li>
-        <Link to="/trainer">Trainer</Link>
+        <NavLink to="/trainer">Trainer</NavLink>
       </li>
       <li>
-        <Link to="/classes">Classes</Link>
+        <NavLink to="/classes">Classes</NavLink>
       </li>
       <li>
-        <Link to="/forums">Forums</Link>
+        <NavLink to="/forums">Forums</NavLink>
       </li>
       <li>
-        <Link className="font-semibold text-[#f47520]" to="/gallery">Dashboard</Link>
+        <NavLink className="font-semibold text-[#f47520]" to="/gallery">Dashboard</NavLink>
       </li>
     </>
   );
   return (
-    <div className="navbar  bg-black  ">
+    <div className="navbar absolute z-50 bg-transparent  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
