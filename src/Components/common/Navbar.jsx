@@ -19,12 +19,12 @@ const Navbar = () => {
         <Link to="/forums">Forums</Link>
       </li>
       <li>
-        <Link className="font-semibold" to="/gallery">Dashboard</Link>
+        <Link className="font-semibold text-[#f47520]" to="/gallery">Dashboard</Link>
       </li>
     </>
   );
   return (
-    <div className="navbar  bg-transparent">
+    <div className="navbar  bg-black  ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center  ">
         <div className="hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu text-white menu-horizontal px-1">{navLinks}</ul>
         </div>
       </div>
       <div className="navbar-end">
