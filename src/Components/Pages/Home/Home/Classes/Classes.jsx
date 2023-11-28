@@ -1,4 +1,4 @@
-import img from "../../../../assets/image/Banner/Img 1.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { Pagination } from "swiper/modules";
 import { FaArrowCircleLeft } from "react-icons/fa";
@@ -26,7 +26,7 @@ const Classes = () => {
       }}
     >
       <div className="hero-overlay bg-opacity-10"></div>
-      <div className="hero-content ">
+      <div className="hero-content w-screen mx-auto ">
         <div className="max-w-screen-lg mx-auto">
           <div className="text-center mb-12">
             <h2 className="mb-5 text-5xl text-white font-bold  ">

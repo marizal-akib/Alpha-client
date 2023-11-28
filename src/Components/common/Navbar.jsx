@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom/dist";
+import { NavLink } from "react-router-dom/dist";
 
 const Navbar = () => {
   const navLinks = (

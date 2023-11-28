@@ -2,8 +2,12 @@ import { Helmet } from "react-helmet-async";
 import Banner from "./Home/Banner";
 import FeaturedSection from "./Home/FeaturedSection/FeaturedSection";
 import About from "./Home/About/About";
-import Classes from "./Classes/Classes";
+import Classes from "./Home/Classes/Classes";
 import Testimonials from "./Home/Testimonials";
+import NewsLetter from "./Home/NewsLetter";
+
+import TeamSection from "./Home/TeamSection";
+import LatestArticles from "./Home/Articels/LatestArticles";
 
 
 const Home = () => {
@@ -17,6 +21,9 @@ const Home = () => {
             <About></About>
             <Classes></Classes>
             <Testimonials></Testimonials>
+            <LatestArticles></LatestArticles>
+            <TeamSection></TeamSection>
+            <NewsLetter></NewsLetter>
         </div>
     );
 };

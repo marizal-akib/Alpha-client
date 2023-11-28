@@ -64,6 +64,7 @@ const Testimonials = () => {
                       <h2 className=" font-bold text-lg">{review.name}</h2>
                     </div>
                     <img
+                      
                       className="w-44 relative right-24 bottom-24 opacity-80"
                       src="https://i.ibb.co/K0jRCNy/Screenshot-2023-11-26-121306-removebg-preview.png"
                       alt=""
