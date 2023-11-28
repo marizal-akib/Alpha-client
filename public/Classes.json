@@ -1,0 +1,44 @@
+[
+    {
+      "_id": "1",
+      "className": "Strength Blast",
+      "category": "Strength Training",
+      "trainerName": "John",
+      "img": "https://i.ibb.co/zsdwC1X/jhon-2.jpg"
+    },
+    {
+      "_id": "2",
+      "className": "Yoga Flow",
+      "category": "Yoga",
+      "trainerName": "Emily",
+      "img": "https://i.ibb.co/3p6LFh1/group-women-training-together-gym.jpg"
+    },
+    {
+      "_id": "3",
+      "className": "HIIT Extreme",
+      "category": "High-Intensity Interval Training",
+      "trainerName": "David",
+      "img": "https://i.ibb.co/LPKsRv4/shirtless-man-training-abs-mat.jpg"
+    },
+    {
+      "_id": "4",
+      "className": "Pilates Power",
+      "category": "Pilates",
+      "trainerName": "Sophia",
+      "img": "https://i.ibb.co/mC5sCDF/group-women-practicing-stretching-mats.jpg"
+    },
+    {
+      "_id": "5",
+      "className": "Cardio Fusion",
+      "category": "Cardio",
+      "trainerName": "John",
+      "img": "https://i.ibb.co/6Zz0SJF/jhon.jpg"
+    },
+    {
+      "_id": "6",
+      "className": "Zumba Rhythm",
+      "category": "Dance Fitness",
+      "trainerName": "Emily",
+      "img": "https://i.ibb.co/GJbGxc0/people-taking-part-dance-therapy-class.jpg"
+    }
+  ]
