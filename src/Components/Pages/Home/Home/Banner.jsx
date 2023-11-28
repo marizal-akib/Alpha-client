@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay,  } from "swiper/modules";
 
 const Banner = () => {
   return (
@@ -27,11 +27,9 @@ const Banner = () => {
             delay: 4000,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination]}
+          
+          // navigation={true}
+          modules={[Autoplay]}
           className="mySwiper w-screen shadow-2xl md:mt-6 mx-auto"
         >
           <SwiperSlide>

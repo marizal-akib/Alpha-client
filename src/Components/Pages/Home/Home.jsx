@@ -3,6 +3,7 @@ import Banner from "./Home/Banner";
 import FeaturedSection from "./Home/FeaturedSection/FeaturedSection";
 import About from "./Home/About/About";
 import Classes from "./Classes/Classes";
+import Testimonials from "./Home/Testimonials";
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <FeaturedSection></FeaturedSection>
             <About></About>
             <Classes></Classes>
+            <Testimonials></Testimonials>
         </div>
     );
 };

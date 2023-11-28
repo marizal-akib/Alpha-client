@@ -27,7 +27,7 @@ const Classes = () => {
     >
       <div className="hero-overlay bg-opacity-10"></div>
       <div className="hero-content ">
-        <div className="max-w-6xl">
+        <div className="max-w-screen-lg mx-auto">
           <div className="text-center mb-12">
             <h2 className="mb-5 text-5xl text-white font-bold  ">
               OUR PROGRAMS

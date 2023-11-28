@@ -1,0 +1,35 @@
+[
+    {
+      "_id": "1",
+      "quote": "This gym changed my life! The trainers are amazing and the classes are top-notch.",
+      "name": "Sarah Johnson",
+      "profession": "Marketing Executive",
+      "img": "https://i.ibb.co/mC3VtTg/woman-doing-back.jpg",
+      "gender": "female"
+    },
+    {
+      "_id": "2",
+      "quote": "I've never felt healthier and more confident. The yoga classes are my favorite!",
+      "name": "Michael Thompson",
+      "profession": "Software Developer",
+      "img": "https://i.ibb.co/5GLb4GG/man-sweatpants-amidst-barbells.jpg",
+      "gender": "male"
+    },
+    {
+      "_id": "3",
+      "quote": "Fantastic trainers and a great atmosphere! Highly recommend to anyone looking to get fit.",
+      "name": "Amanda Clark",
+      "profession": "Graphic Designer",
+      "img": "https://i.ibb.co/wSkrVtj/beautiful-girl-wearing-sportswear-is-posing-smith-machine-fitness-center.jpg",
+      "gender": "female"
+    },
+    {
+      "_id": "4",
+      "quote": "The nutrition advice and workout plans have transformed my health completely.",
+      "name": "Daniel Smith",
+      "profession": "Teacher",
+      "img": "https://i.ibb.co/qCFCb3L/muscular-man-posing-floor-gym.jpg",
+      "gender": "male"
+    }
+  ]
+  
