@@ -1,0 +1,26 @@
+[
+  {
+    "name": "John Doe",
+    "specialty": "Personal Trainer",
+    "detail_experience": "Certified fitness coach with 10+ years of experience in strength training and personalized fitness programs.",
+    "img": "https://i.ibb.co/JpZsBB7/male-boxer-posing-t-shirt-with-arms-crossed.jpg"
+  },
+  {
+    "name": "Emily Smith",
+    "specialty": "Yoga Instructor",
+    "detail_experience": "Experienced yoga instructor focusing on Vinyasa and Hatha yoga practices for over 8 years.",
+    "img": "https://i.ibb.co/GpVccn8/group-women-doing-yoga-hall.jpg"
+  },
+  {
+    "name": "David Johnson",
+    "specialty": "Nutritionist",
+    "detail_experience": "Registered dietitian specializing in sports nutrition and meal planning for optimal health and performance.",
+    "img": "https://i.ibb.co/HgZDtX3/young-handsome-man-training-gym-bodybuilding.jpg"
+  },
+  {
+    "name": "Sophia Williams",
+    "specialty": "Physical Therapist",
+    "detail_experience": "Licensed physical therapist specializing in injury rehabilitation and preventive care for athletes and fitness enthusiasts.",
+    "img": "https://i.ibb.co/YjDz0dQ/medium-shot-smiley-woman-gym.jpg"
+  }
+]

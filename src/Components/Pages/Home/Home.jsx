@@ -6,7 +6,7 @@ import Classes from "./Home/Classes/Classes";
 import Testimonials from "./Home/Testimonials";
 import NewsLetter from "./Home/NewsLetter";
 
-import TeamSection from "./Home/TeamSection";
+import TeamSection from "./Home/Team/TeamSection";
 import LatestArticles from "./Home/Articels/LatestArticles";
 
 
