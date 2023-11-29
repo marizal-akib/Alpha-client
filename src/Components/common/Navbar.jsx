@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom/dist";
+import { Link, NavLink } from "react-router-dom/dist";
 
 const Navbar = () => {
   const navLinks = (
@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to="/forums">Forums</NavLink>
       </li>
       <li>
-        <NavLink className="font-semibold text-[#f47520]" to="/gallery">Dashboard</NavLink>
+        <NavLink className="font-semibold text-[#f47520]" to="/dashboard">Dashboard</NavLink>
       </li>
     </>
   );
@@ -68,7 +68,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to={'/login'} className="btn border-[#f47520] rounded-none border-2 font-semibold bg-black bg-opacity-50 text-[#f47520]">Login</Link>
+        <Link to={'/signUp'} className="btn bg-[#f47520] border-black mx-3 rounded-none text-white ">Reiteration</Link>
       </div>
     </div>
   );

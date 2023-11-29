@@ -1,51 +1,68 @@
 [
-    {
-      "_id": "1",
-      "category": "Fitness",
-      "post_date": "2023-11-01",
-      "title": "Unlocking the Power of Strength Training",
-      "img": "https://i.ibb.co/8BNFtKY/muscular-build-man-exercising-with-barbell-cross-training-gym.jpg",
-      "post": "Strength training is an essential part of any fitness regimen. Not only does it build muscle, but it also improves bone density and boosts metabolism. Incorporating regular strength training sessions into your routine can help you achieve your fitness goals faster."
-    },
-    {
-      "_id": "2",
-      "category": "Nutrition",
-      "post_date": "2023-10-15",
-      "title": "The Role of Macros in a Balanced Diet",
-      "img": "https://i.ibb.co/dW1DkbH/top-view-food-groups-assortment.jpg",
-      "post": "Macronutrients, including carbohydrates, proteins, and fats, play a crucial role in maintaining a balanced diet. Understanding the right balance of macros for your body type and goals is key to optimizing your nutrition and fueling your workouts effectively."
-    },
-    {
-      "_id": "3",
-      "category": "Exercise",
-      "post_date": "2023-09-28",
-      "title": "The Benefits of High-Intensity Interval Training (HIIT)",
-      "img": "https://i.ibb.co/5BD6B4M/athlete-focused-tire-flipping.jpg",
-      "post": "HIIT workouts involve short bursts of intense exercise followed by brief rest periods. Research shows that HIIT offers various benefits, including improved cardiovascular health, increased calorie burn, and enhanced endurance. Incorporating HIIT into your routine can spice up your workouts and lead to significant fitness gains."
-    },
-    {
-      "_id": "4",
-      "category": "Fitness",
-      "post_date": "2023-08-20",
-      "title": "The Importance of Flexibility in Fitness",
-      "img": "https://i.ibb.co/1m7GsBV/woman-practising-pilates-pilates-reformer.jpg",
-      "post": "Flexibility is often overlooked but is a crucial component of overall fitness. Regular stretching and flexibility exercises can enhance range of motion, prevent injuries, and improve posture. Incorporating stretching routines into your fitness regimen can contribute to better overall health."
-    },
-    {
-      "_id": "5",
-      "category": "Nutrition",
-      "post_date": "2023-07-12",
-      "title": "Navigating Nutrition Labels: Understanding Serving Sizes",
-      "img": "https://i.ibb.co/MBWRnY1/healthy-diet-notes-list-concept.jpg",
-      "post": "Understanding nutrition labels is essential for making informed food choices. Paying attention to serving sizes, macronutrient breakdowns, and ingredient lists can empower you to make healthier decisions when it comes to food consumption and managing your nutritional intake."
-    },
-    {
-      "_id": "6",
-      "category": "Exercise",
-      "post_date": "2023-06-05",
-      "title": "The Science Behind Endorphins and Exercise",
-      "img": "https://i.ibb.co/JBhLrkz/front-view-woman-doing-sport-with-stats.jpg",
-      "post": "Exercise triggers the release of endorphins, neurotransmitters that reduce pain perception and induce feelings of happiness and well-being. Understanding how exercise influences endorphin production can motivate individuals to engage in physical activity for both physical and mental health benefits."
-    }
-  ]
-  
+  {
+    "_id": "1",
+    "vote": 1,
+    "category": "Fitness",
+    "userName": "John",
+    "role": "trainer",
+    "post_date": "2023-11-01",
+    "title": "Unlocking the Power of Strength Training",
+    "img": "https://i.ibb.co/8BNFtKY/muscular-build-man-exercising-with-barbell-cross-training-gym.jpg",
+    "post": "Strength training is an essential part of any fitness regimen. Not only does it build muscle, but it also improves bone density and boosts metabolism. Incorporating regular strength training sessions into your routine can help you achieve your fitness goals faster."
+  },
+  {
+    "_id": "2",
+    "vote": 2,
+    "category": "Nutrition",
+    "userName": "Emily",
+    "role": "trainer",
+    "post_date": "2023-10-15",
+    "title": "The Role of Macros in a Balanced Diet",
+    "img": "https://i.ibb.co/dW1DkbH/top-view-food-groups-assortment.jpg",
+    "post": "Macronutrients, including carbohydrates, proteins, and fats, play a crucial role in maintaining a balanced diet. Understanding the right balance of macros for your body type and goals is key to optimizing your nutrition and fueling your workouts effectively."
+  },
+  {
+    "_id": "3",
+    "vote": 3,
+    "category": "Exercise",
+    "userName": "David",
+    "role": "trainer",
+    "post_date": "2023-09-28",
+    "title": "The Benefits of High-Intensity Interval Training (HIIT)",
+    "img": "https://i.ibb.co/5BD6B4M/athlete-focused-tire-flipping.jpg",
+    "post": "HIIT workouts involve short bursts of intense exercise followed by brief rest periods. Research shows that HIIT offers various benefits, including improved cardiovascular health, increased calorie burn, and enhanced endurance. Incorporating HIIT into your routine can spice up your workouts and lead to significant fitness gains."
+  },
+  {
+    "_id": "4",
+    "vote": "0,
+    "category": "Fitness",
+    "userName": "Sophia",
+    "role": "trainer",
+    "post_date": "2023-08-20",
+    "title": "The Importance of Flexibility in Fitness",
+    "img": "https://i.ibb.co/1m7GsBV/woman-practising-pilates-pilates-reformer.jpg",
+    "post": "Flexibility is often overlooked but is a crucial component of overall fitness. Regular stretching and flexibility exercises can enhance range of motion, prevent injuries, and improve posture. Incorporating stretching routines into your fitness regimen can contribute to better overall health."
+  },
+  {
+    "_id": "5",
+    "vote": 5,
+    "category": "Nutrition",
+    "userName": "John",
+    "role": "trainer",
+    "post_date": "2023-07-12",
+    "title": "Navigating Nutrition Labels: Understanding Serving Sizes",
+    "img": "https://i.ibb.co/MBWRnY1/healthy-diet-notes-list-concept.jpg",
+    "post": "Understanding nutrition labels is essential for making informed food choices. Paying attention to serving sizes, macronutrient breakdowns, and ingredient lists can empower you to make healthier decisions when it comes to food consumption and managing your nutritional intake."
+  },
+  {
+    "_id": "6",
+    "vote": 6,
+    "category": "Exercise",
+    "userName": "Akib",
+    "role": "admin",
+    "post_date": "2023-06-05",
+    "title": "The Science Behind Endorphins and Exercise",
+    "img": "https://i.ibb.co/JBhLrkz/front-view-woman-doing-sport-with-stats.jpg",
+    "post": "Exercise triggers the release of endorphins, neurotransmitters that reduce pain perception and induce feelings of happiness and well-being. Understanding how exercise influences endorphin production can motivate individuals to engage in physical activity for both physical and mental health benefits."
+  }
+]

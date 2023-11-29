@@ -1,11 +1,30 @@
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../../../../Hooks/useAxiosPublic'
 const From = () => {
-    const handleNews = e =>{
+  const axiosPublic = useAxiosPublic()
+    const handleNews = async e =>{
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get("email")
         const name = form.get("name")
         console.log(email, name);
+        const subscriber = {
+          name : name,
+          email : email
+        }
+        const res = await axiosPublic.post('/sub', subscriber)
+        console.log(res.data);
+        if (res.data.insertedId) {
+          // form.reset();
+          Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: `Welcome to Alpha ${subscriber.name} `,
+              showConfirmButton: false,
+              timer: 1500
+            });
+
+      }
     }
   return (
     <form onSubmit={handleNews} className="card-body">
@@ -13,6 +32,7 @@ const From = () => {
         
         <input
           type="text"
+          name="name"
           placeholder="Name"
           className="input rounded-none input-bordered"
           required
@@ -20,6 +40,7 @@ const From = () => {
       </div>
       <div className="form-control">
         <input
+          name="email"
           type="email"
           placeholder="Email"
           className="input rounded-none input-bordered"

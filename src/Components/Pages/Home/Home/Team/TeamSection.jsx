@@ -22,7 +22,7 @@ Fitness Trainers - Guiding You to Achieve Your Goals.</p>
             
         <div className="grid grid-cols-4 mx-auto mt-8 gap-8">
         {
-            team?.map(team => <TeamCard key={team._id} team={team}></TeamCard>)
+            team?.map((team, i) => <TeamCard key={i} team={team}></TeamCard>)
         }
       </div>
         </div>
