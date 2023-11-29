@@ -23,7 +23,7 @@ const LatestArticles = () => {
   return (
     <div className="bg-[#141414] p-10">
       <h2 className="text-center text-4xl font-semibold text-white mb-8">
-        Latest <span className="text-[#f47520]">Articles</span>
+        Top <span className="text-[#f47520]">Articles</span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-8">
         {
