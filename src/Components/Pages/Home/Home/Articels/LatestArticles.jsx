@@ -12,7 +12,7 @@ const LatestArticles = () => {
   // }, []);
   const axiosPublic = useAxiosPublic();
     const { data : posts=[] }= useQuery({
-        queryKey: ['cart'],
+        queryKey: ['post'],
         queryFn: async () =>{
             const res = await axiosPublic.get("/posts?size=6&page=0");
             return res.data;

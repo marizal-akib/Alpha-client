@@ -1,17 +1,19 @@
 import { Helmet } from "react-helmet-async";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { createUserWithGoogle, signIn } = useAuth();
   const axiosPublic = useAxiosPublic();
 
-  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleGoogleLogin = () => {
     createUserWithGoogle()
       .then((res) => {
@@ -19,35 +21,36 @@ const Login = () => {
         const userInfo = {
           email: res.user?.email,
           name: res.user?.displayName,
-          role : "member"
+          role: "member",
         };
 
         axiosPublic
           .post("/users", userInfo)
           .then((res) => console.log(res.data));
+        toast(`{Welcome }`);
         navigate(from, { replace: true });
       })
       .catch((error) => console.log("error", error));
   };
 
   const handleLogin = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        // const role2 = member;
-        console.log(email, password , );
-        signIn(email,password)
-        .then(result =>{
-          console.log(result.user);
-          navigate(location?.state ? location.state : '/')
-        })
-      .catch(error => {
-        console.error(error)
-        toast("Email / Password doesn't match");
-  
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    // const role2 = member;
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast(`{Welcome }`);
+        navigate(location?.state ? location.state : "/");
       })
-      };
+      .catch((error) => {
+        console.error(error);
+        toast("Email / Password doesn't match");
+      });
+  };
   return (
     <>
       <Helmet>

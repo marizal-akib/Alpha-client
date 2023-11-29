@@ -1,6 +1,13 @@
 import { Link, NavLink } from "react-router-dom/dist";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+  const { user, logOut ,loading } = useAuth();
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const navLinks = (
     <>
       <li>
@@ -19,7 +26,9 @@ const Navbar = () => {
         <NavLink to="/forums">Forums</NavLink>
       </li>
       <li>
-        <NavLink className="font-semibold text-[#f47520]" to="/dashboard">Dashboard</NavLink>
+        <NavLink className="font-semibold text-[#f47520]" to="/dashboard">
+          Dashboard
+        </NavLink>
       </li>
     </>
   );
@@ -68,8 +77,33 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <Link to={'/login'} className="btn border-[#f47520] rounded-none border-2 font-semibold bg-black bg-opacity-50 text-[#f47520]">Login</Link>
-        <Link to={'/signUp'} className="btn bg-[#f47520] border-black mx-3 rounded-none text-white ">Reiteration</Link>
+      
+    {  loading?   <span className="loading loading-spinner text-success"></span>: ( user ? (
+          <>
+            <span>{user?.displayName}</span>
+            <button
+              onClick={handleLogout}
+              className="btn bg-[#f47520] border-black mx-3 rounded-none text-white  "
+            >
+              Log Out
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              to={"/login"}
+              className="btn border-[#f47520] rounded-none border-2 font-semibold bg-black bg-opacity-50 text-[#f47520]"
+            >
+              Login
+            </Link>
+            <Link
+              to={"/signUp"}
+              className="btn bg-[#f47520] border-black mx-3 rounded-none text-white "
+            >
+              Reiteration
+            </Link>
+          </>
+        ) )}
       </div>
     </div>
   );
