@@ -4,7 +4,7 @@ import FeaturedSection from "./Home/FeaturedSection/FeaturedSection";
 import About from "./Home/About/About";
 import Classes from "./Home/Classes/Classes";
 import Testimonials from "./Home/Testimonials";
-import NewsLetter from "./Home/NewsLetter";
+import NewsLetter from "./Home/NewsLtter/NewsLetter";
 
 import TeamSection from "./Home/Team/TeamSection";
 import LatestArticles from "./Home/Articels/LatestArticles";

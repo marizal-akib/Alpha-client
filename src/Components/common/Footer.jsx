@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <div className="footer p-10 bg-neutral text-neutral-content">
+      <div className="footer p-10 bg-stone-900 text-neutral-content">
         <aside>
           <img
           className="w-28"
@@ -53,9 +53,9 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="footer footer-center p-4 bg-base-300 text-base-content">
+      <div className="footer footer-center p-4 bg-slate-900 text-base-content">
         <aside>
-          <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+          <p className="text-white">Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
         </aside>
       </div>
     </footer>

@@ -60,7 +60,7 @@ const Classes = () => {
 
             {classes?.map((item, i) => (
               <SwiperSlide key={i}>
-                <Link to={'/classes'}>
+                <Link to={`/classes/${item._id}`}>
                   <img className="w-11/12" src={item.img} alt="" />
                   <div>
                     <h2 className="text-lg text-[#f47520] font-bold">{item.category}</h2>
