@@ -2,7 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 const getImages = async ({ pageParam = 0 }) => {
   const res = await fetch(
-    `http://localhost:5000/photos?size=16&page=${pageParam}`
+    `https://alpha-server-side.vercel.app/photos?size=16&page=${pageParam}`
   );
   const data = await res.json();
 

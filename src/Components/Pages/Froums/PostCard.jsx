@@ -1,10 +1,45 @@
 import { IoMdPerson } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
 /* eslint-disable react/prop-types */
-const PostCard = ({ post: posts }) => {
-  const { _id, vote, userName, role,  title, img, post } =
+const PostCard = ({ post: posts,refetch }) => {
+  const axiosPublic = useAxiosPublic()
+    const { _id, vote, userName, role,  title, img, post } =
     posts;
+  const handleUp = async () => {
+    if(vote){
+
+      const upVote = vote + 1;
+      const newVote ={
+        vote : upVote
+      }
+      const res = await axiosPublic.put(`/posts/${posts._id}`, newVote);
+  
+      if (res.data.modifiedCount > 0) {
+          refetch()
+      
+  
+      }
+    }
+  };
+  const handleDown = async () => {
+    if (vote) {
+      const downVote = vote + 1;
+      const newVote ={
+        vote : downVote
+      }
+      const res = await axiosPublic.put(`/posts/${posts._id}`, newVote);
+  
+      if (res.data.modifiedCount > 0) {
+          refetch()
+      
+  
+      }
+    }
+  };
+
   return (
     <div className="card rounded-none  w-11/12 mx-auto flex flex-row bg-base-100 shadow-xl">
       <figure>
@@ -29,12 +64,12 @@ const PostCard = ({ post: posts }) => {
             ...Read More
           </Link>
         </p>
-        <div className="flex card-actions flex-row justify-end">
+        <div className="flex card-actions align-baseline flex-row justify-end">
 
 
-          <button className="btn btn-primary">up</button>
+          <button onClick={handleUp} className="btn btn-primary"><FaArrowUp /></button>
           <h2>{vote}</h2>
-          <button className="btn btn-primary">down</button>
+          <button onClick={handleDown} className="btn btn-primary"><FaArrowDown/></button>
 
 
         </div>

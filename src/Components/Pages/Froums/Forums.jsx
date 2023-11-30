@@ -16,11 +16,11 @@ const Forums = () => {
   } = useQuery({
     queryKey: ["post"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/posts?size=6&page=${currentPage}`);
+      const res = await axiosPublic.get(`/posts?page=${currentPage}&size=6`);
       return res.data;
     },
   });
-
+console.log(currentPage);
   const { data: allPosts = [] } = useQuery({
     queryKey: ["allPost"],
     queryFn: async () => {
@@ -29,7 +29,7 @@ const Forums = () => {
     },
   });
   const count = allPosts.length;
-  // console.log(posts);
+  console.log(posts);
   const numberOfPages = Math.ceil(count / 6);
   const pages = [...Array(numberOfPages).keys()];
 
@@ -38,11 +38,13 @@ const Forums = () => {
   const handlePrev = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
+      refetch()
     }
   };
   const handleNext = () => {
     if (currentPage < pages.length - 1) {
       setCurrentPage(currentPage + 1);
+      refetch()
     }
   };
   return (
@@ -86,7 +88,7 @@ const Forums = () => {
                 <div className="space-y-5  ">
                   {posts.map((post) => (
                   
-                    <PostCard key={post._id} post={post} refetch={refetch}></PostCard>
+                    <PostCard key={post._id} post={post} refetch={refetch} ></PostCard>
                   ))}
                 </div>
                 <div className="text-center m-10">
