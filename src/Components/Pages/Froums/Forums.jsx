@@ -67,14 +67,14 @@ const Forums = () => {
           </div>
         </div>
         <div className="flex w-screen">
-          {/* dashboard side bar */}
-          <div className="w-64 min-h-full bg-orange-400">
+          
+          <div className="w-64  min-h-full bg-orange-400">
             {
                 !loading && <><h2 className="p-5 text-2xl text-center font-semibold">Total posts:- {count} </h2></>
             }
           </div>
-          {/* dashboard content */}
-          <div className="flex-1">
+         
+          <div className="p-5 flex-1 bg-[#141414]">
             {loading ? (
               <div className=" p-80 ml-64 ">
                 <span className=" loading loading-infinity loading-lg"></span>
@@ -82,7 +82,7 @@ const Forums = () => {
             ) : (
               <>
                 
-                <div className="space-y-5">
+                <div className="space-y-5 ">
                   {posts.map((post) => (
                     <div key={post._id} className="card w-11/12 mx-auto  bg-base-100 shadow-xl">
                       <div className="card-body">
@@ -122,7 +122,7 @@ const Forums = () => {
                     <button
                       onClick={() => setCurrentPage(page)}
                       key={page}
-                      className={`btn btn-square  border-none text-base m-1 ${
+                      className={`btn btn-square text-white border-none text-base m-1 ${
                         currentPage === page
                           ? "bg-orange-500 underline"
                           : "bg-transparent"

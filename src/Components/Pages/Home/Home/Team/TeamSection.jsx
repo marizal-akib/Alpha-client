@@ -2,9 +2,11 @@
 import { useQuery } from "@tanstack/react-query";
 import TeamCard from "./TeamCard";
 import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
+import { useState } from "react";
 
 
 const TeamSection = () => {
+  const [home, setHome] = useState(true)
   const axiosPublic = useAxiosPublic();
   const { data : team=[] }= useQuery({
       queryKey: ['team'],
@@ -28,7 +30,7 @@ Fitness Trainers - Guiding You to Achieve Your Goals.</p>
             
         <div className="grid grid-cols-4 mx-auto mt-8 gap-8">
         {
-            team?.map((trainer, i) => <TeamCard key={i} trainer={trainer}></TeamCard>)
+            team?.map((trainer, i) => <TeamCard key={i} inHome={home} trainer={trainer}></TeamCard>)
         }
       </div>
         </div>
