@@ -14,6 +14,9 @@ import UserHome from "../Components/Dashboard/UserDash/UserHome";
 import Login from "../Components/Pages/Auth/Login";
 import SignUp from "../Components/Pages/Auth/SignUp";
 import Apply from "../Components/Pages/Home/Home/Team/Apply";
+import BookTrainer from "../Components/Pages/Trainer/BookTrainer";
+import Payment from "../Components/Pages/Trainer/Payment";
+// import Book from "../Components/Pages/Trainer/Book.jsx";
 
  export const router = createBrowserRouter([
     {
@@ -52,6 +55,15 @@ import Apply from "../Components/Pages/Home/Home/Team/Apply";
         {
             path:'/apply',
             element:<Apply></Apply>
+        },
+        {
+            path:'/payment',
+            element:<Payment></Payment>
+        },
+        {
+            path:'/trainer/:id',
+            element:<BookTrainer></BookTrainer>,
+            loader: ({params}) => fetch((`http://localhost:5000/team/${params.id}`))
         },
       ]
       

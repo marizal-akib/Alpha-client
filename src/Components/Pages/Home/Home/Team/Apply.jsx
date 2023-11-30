@@ -39,14 +39,13 @@ const Apply = () => {
           Swal.fire({
               position: "top-end",
               icon: "success",
-              title: `${data.name} is added to the menu`,
+              title: `${data.name} we will let you know`,
               showConfirmButton: false,
-              timer: 1500
+              timer: 3500
             });
 
       }
     }
-    // console.log(res.data);
   };
   return (
     <div className="pt-28 pb-9 bg-[#141414]">

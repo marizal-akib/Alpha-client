@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PostCard from "./PostCard";
 
 const Forums = () => {
   const axiosPublic = useAxiosPublic();
@@ -76,39 +77,16 @@ const Forums = () => {
          
           <div className="p-5 flex-1 bg-[#141414]">
             {loading ? (
-              <div className=" p-80 ml-64 ">
+              <div className=" p-60 ml-64 ">
                 <span className=" loading loading-infinity loading-lg"></span>
               </div>
             ) : (
               <>
                 
-                <div className="space-y-5 ">
+                <div className="space-y-5  ">
                   {posts.map((post) => (
-                    <div key={post._id} className="card w-11/12 mx-auto  bg-base-100 shadow-xl">
-                      <div className="card-body">
-                        <h2 className="card-title">
-                          {post.postTitle}
-                          <div className="badge border-none font-bold text-orange-900 text-xs">
-                            {post.category}
-                          </div>
-                        </h2>
-                        <p className="font-medium text-sm">
-                          {post.description}
-                        </p>
-                        <p className="font-semibold">
-                          Bid Range: {post.minPrice}$ - {post.maxPrice}$
-                        </p>
-
-                        <div className="card-actions justify-end">
-                          <Link
-                            to={`/post/${post._id}`}
-                            className="btn btn-success text-xs rounded-md font-semibold"
-                          >
-                            Bid Now
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+                  
+                    <PostCard key={post._id} post={post} refetch={refetch}></PostCard>
                   ))}
                 </div>
                 <div className="text-center m-10">
