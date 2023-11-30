@@ -1,14 +1,20 @@
-import { useEffect, useState } from "react";
+
+import { useQuery } from "@tanstack/react-query";
 import TeamCard from "./TeamCard";
+import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
 
 
 const TeamSection = () => {
-    const [team, setTeam] = useState();
-    useEffect(() => {
-      fetch("/Team.json")
-        .then((res) => res.json())
-        .then((data) => setTeam(data));
-    }, []);
+  const axiosPublic = useAxiosPublic();
+  const { data : team=[] }= useQuery({
+      queryKey: ['team'],
+      queryFn: async () =>{
+          const res = await axiosPublic.get("/team?size=4&page=0");
+          return res.data;
+      }
+      
+    })
+    console.log(team);
     return (
         <div className="text-center  p-10" style={{
             backgroundImage:
@@ -22,7 +28,7 @@ Fitness Trainers - Guiding You to Achieve Your Goals.</p>
             
         <div className="grid grid-cols-4 mx-auto mt-8 gap-8">
         {
-            team?.map((team, i) => <TeamCard key={i} team={team}></TeamCard>)
+            team?.map((trainer, i) => <TeamCard key={i} trainer={trainer}></TeamCard>)
         }
       </div>
         </div>

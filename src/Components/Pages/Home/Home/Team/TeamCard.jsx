@@ -2,8 +2,8 @@
 
 import { Link } from "react-router-dom";
 
-const TeamCard = ({ team }) => {
-  const { name, specialty , img } = team;
+const TeamCard = ({ trainer }) => {
+  const { name, specialty , img } = trainer;
   return (
     <div className="border-b-4 border-b-slate-400">
         <Link to={`/trainer/${name}`}>

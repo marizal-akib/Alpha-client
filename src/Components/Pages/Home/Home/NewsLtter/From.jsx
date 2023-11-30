@@ -10,7 +10,8 @@ const From = () => {
         console.log(email, name);
         const subscriber = {
           name : name,
-          email : email
+          email : email,
+         
         }
         const res = await axiosPublic.post('/sub', subscriber)
         console.log(res.data);
