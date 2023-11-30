@@ -13,6 +13,7 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import UserHome from "../Components/Dashboard/UserDash/UserHome";
 import Login from "../Components/Pages/Auth/Login";
 import SignUp from "../Components/Pages/Auth/SignUp";
+import Apply from "../Components/Pages/Home/Home/Team/Apply";
 
  export const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ import SignUp from "../Components/Pages/Auth/SignUp";
         {
             path:'/signUp',
             element:<SignUp></SignUp>
+        },
+        {
+            path:'/apply',
+            element:<Apply></Apply>
         },
       ]
       

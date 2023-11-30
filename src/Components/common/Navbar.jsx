@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom/dist";
 import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
-  const { user, logOut ,loading } = useAuth();
+  const { user, logOut, loading } = useAuth();
   const handleLogout = () => {
     logOut()
       .then(() => {})
@@ -77,10 +77,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-      
-    {  loading?   <span className="loading loading-spinner text-success"></span>: ( user ? (
+        {loading ? (
+          <span className="loading loading-spinner text-success"></span>
+        ) : user ? (
           <>
-            <span>{user?.displayName}</span>
+            <span className="  text-white">{user?.displayName}</span>
             <button
               onClick={handleLogout}
               className="btn bg-[#f47520] border-black mx-3 rounded-none text-white  "
@@ -103,7 +104,7 @@ const Navbar = () => {
               Reiteration
             </Link>
           </>
-        ) )}
+        )}
       </div>
     </div>
   );

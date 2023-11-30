@@ -98,12 +98,8 @@ const SignUp = () => {
         <div className="hero-overlay bg-opacity-50 "></div>
         <div className="hero-content mt-10 lg:p-20 flex-col lg:flex-row">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign-Up now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+            <h1 className="text-5xl font-bold text-white">Sign-Up now!</h1>
+            
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -204,7 +200,7 @@ const SignUp = () => {
                   type="submit"
                   value="Sign-Up"
                 />
-                <button></button>
+            
               </div>
               <div className="text-center">
                 <div className="ml-12  w-2/3 divider">OR</div>
