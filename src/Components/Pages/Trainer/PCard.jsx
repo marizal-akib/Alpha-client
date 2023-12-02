@@ -1,37 +1,40 @@
+/* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const PCard = ({ sub, bookInfo }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
-  const { trainer_name, slotBooked, name, email, profilePic } = bookInfo;
-  const {plan, description, price} = sub
+  const {trainer_id, trainer_name, slotBooked, name, email, profilePic } = bookInfo;
+  const { plan, description, price } = sub;
 
   const handleBooking = async () => {
     const bookInfo = {
+
+      trainer_id,
       trainer_name,
       slotBooked,
       name,
       email,
       profilePic,
       plan,
-      price
+      price,
     };
     console.log(bookInfo);
 
-    const res = await  axiosPublic.post('/booking', bookInfo);
-      console.log(res.data);
-      if (res.data.insertedId) {
-          Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: `${name} Please pay the fee`,
-              showConfirmButton: false,
-              timer: 3500
-            });
-navigate('/payment')
-      }
+    const res = await axiosPublic.post("/booking", bookInfo);
+    console.log(res.data);
+    if (res.data.insertedId) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `${name} Please pay the fee`,
+        showConfirmButton: false,
+        timer: 3500,
+      });
+      navigate("/payment");
+    }
   };
   return (
     <div className="card  rounded-none bg-[#141414] shadow-xl">

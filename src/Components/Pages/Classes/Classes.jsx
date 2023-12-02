@@ -59,7 +59,7 @@ const Classes = () => {
       </Helmet>
 
       <div className="pt-14  bg-[#141414]">
-      <h2 className=" text-5xl text-center font-bold text-white  mb-4">
+      <h2 className=" text-5xl text-center mt-8 font-bold text-white  mb-4">
             CHOOSE FROM BEST CLASS
           </h2> 
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto mt-8 gap-4">

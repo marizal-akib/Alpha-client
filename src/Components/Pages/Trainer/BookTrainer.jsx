@@ -22,19 +22,22 @@ const BookTrainer = () => {
 
 //   console.log(slotBooked);
 
-  const { name, specialty, detail_experience, img, available_time_slot, slot } =
+  const {_id, name, specialty, detail_experience, img, available_time_slot, slot } =
     trainer[0];
 
   const slots = [...Array(slot).keys()];
 
   const [subs, setSubs] = useState();
   useEffect(() => {
-    fetch("/public/packages.json")
+    fetch("http://localhost:5000/pack")
       .then((res) => res.json())
       .then((data) => setSubs(data));
   }, []);
 
+  console.log(subs);
+
   const bookInfo = {
+    trainer_id: _id,
     trainer_name: name,
     slotBooked,
     name: user?.displayName,

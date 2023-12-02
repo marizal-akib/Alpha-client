@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { FcGoogle } from "react-icons/fc";
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,8 +13,8 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const SignUp = () => {
+
   const axiosPublic = useAxiosPublic();
-  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -22,6 +22,8 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const { createUser, updateUserProfile, createUserWithGoogle,  } = useAuth();
 
@@ -75,7 +77,7 @@ const SignUp = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                navigate("/");
+                navigate(from);
               }
             });
           })

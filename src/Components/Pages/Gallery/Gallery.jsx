@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Photos from "./Photos";
+import Album from "./Album";
 
 const Gallery = () => {
   return (
@@ -27,7 +28,7 @@ const Gallery = () => {
 
       </div>
       <div>
-      <Photos></Photos>
+      <Album></Album>
       </div>
     </div>
   );

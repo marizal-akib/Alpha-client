@@ -52,7 +52,7 @@ const Trainer = () => {
           }}
         >
           <h2 className=" text-5xl font-bold text-white  mb-4">
-            MEET THE PROS
+            MEET THE PROS 
           </h2>
 
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-auto mt-8 gap-4">

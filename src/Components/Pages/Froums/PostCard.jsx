@@ -26,11 +26,11 @@ const PostCard = ({ post: posts,refetch }) => {
   };
   const handleDown = async () => {
     if (vote) {
-      const downVote = vote + 1;
-      const newVote ={
+      const downVote = vote - 1;
+      const ote ={
         vote : downVote
       }
-      const res = await axiosPublic.put(`/posts/${posts._id}`, newVote);
+      const res = await axiosPublic.put(`/post/${posts._id}`, ote);
   
       if (res.data.modifiedCount > 0) {
           refetch()

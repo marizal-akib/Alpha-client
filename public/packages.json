@@ -1,17 +1,17 @@
 [
-    {
-      "plan": "Silver Plan",
-      "description": "Basic membership with access to fitness equipment and group classes",
-      "price": 50
-    },
-    {
-      "plan": "Gold Plan",
-      "description": "Includes personal training sessions, full gym access, and nutritional guidance",
-      "price": 80
-    },
-    {
-      "plan": "Diamond Plan",
-      "description": "Premium membership with unlimited personal training sessions, access to exclusive facilities, and customized diet plans",
-      "price": 120
-    }
-  ]
+  {
+    "plan": "Silver Plan",
+    "price": 50,
+    "description": "Basic membership with access to fitness equipment and group classes"
+  },
+  {
+    "plan": "Gold Plan",
+    "price": 80,
+    "description": "Includes personal training sessions, full gym access and nutritional guidance"
+  },
+  {
+    "plan": "Diamond Plan",
+    "price": 120,
+    "description": "Premium membership with unlimited personal training sessions access to exclusive facilities and customized diet plans"
+  }
+]
