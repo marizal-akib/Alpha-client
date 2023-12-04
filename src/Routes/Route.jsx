@@ -67,7 +67,7 @@ export const router = createBrowserRouter([
         path: "/classes/:id",
         element: <ClassDetails></ClassDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/class/${params.id}`),
+          fetch(`https://alpha-server-side.vercel.app/class/${params.id}`),
       },
       {
         path: "/apply",
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/user/${params.id}`),
+          fetch(`https://alpha-server-side.vercel.app/user/${params.id}`),
       },
     ],
   },

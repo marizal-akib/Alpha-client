@@ -4,6 +4,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -15,11 +16,12 @@ const ForumPost = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
 
   const {  data: trainer = [] } = useQuery({
     queryKey: ["trainer"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/classPost/${user.email}`);
+      const res = await axiosPublic.get(`/classPost/${user.email}`);
       return res.data;
     },
   });

@@ -29,7 +29,7 @@ const BookTrainer = () => {
 
   const [subs, setSubs] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/pack")
+    fetch("https://alpha-server-side.vercel.app/pack")
       .then((res) => res.json())
       .then((data) => setSubs(data));
   }, []);

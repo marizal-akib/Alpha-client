@@ -3,19 +3,20 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import axios from "axios";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const ProfileSetting = () => {
   const {  updateUserProfile, user, loading } = useAuth();
-  const axiosPublic = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
     const imageFile = { image: data.image[0] };
-    const res = await axios.patch(image_hosting_api, imageFile, {
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
       },
@@ -60,7 +61,7 @@ const ProfileSetting = () => {
           ) : (
             <>
               <h2 className="font-semibold text-lg text-red-500">
-                Trainer Name : - {user.displayName}
+                User Name : - {user.displayName}
               </h2>
               <h2 className="font-bold ">Email : - {user.email}</h2>
             </>

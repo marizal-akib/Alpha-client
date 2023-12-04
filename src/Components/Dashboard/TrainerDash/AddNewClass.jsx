@@ -4,6 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -12,11 +13,12 @@ const AddNewClass = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const axiosSecure = useAxiosSecure();
+  const axiosPublic = useAxiosPublic();
 
   const {  data: trainer = [] } = useQuery({
     queryKey: ["trainer"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/classPost/${user.email}`);
+      const res = await axiosPublic.get(`/classPost/${user.email}`);
       return res.data;
     },
   });
@@ -28,7 +30,7 @@ const AddNewClass = () => {
     console.log(_id);
   
     const imageFile = { image: data.image[0] };
-    const res = await axiosSecure.post(image_hosting_api, imageFile, {
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
       },
