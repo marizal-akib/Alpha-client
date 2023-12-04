@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 
 const AllSubscribers = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { data: subscribers = [] } = useQuery({
     queryKey: ["subscribers"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/subs");
+      const res = await axiosSecure.get("/subs");
       return res.data;
     },
   });

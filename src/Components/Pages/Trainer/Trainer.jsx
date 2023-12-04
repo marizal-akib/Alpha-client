@@ -8,14 +8,14 @@ import NewsLetter from "../Home/Home/NewsLtter/NewsLetter";
 const Trainer = () => {
   const [t , setT] = useState(true)
   const axiosPublic = useAxiosPublic();
-  const { data: team = [] } = useQuery({
-    queryKey: ["team"],
+  const { data: trainers = [] } = useQuery({
+    queryKey: ["trainers"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/team");
+      const res = await axiosPublic.get("/trainer");
       return res.data;
     },
   });
-  console.log(team);
+  console.log(trainers);
   return (
     <>
       <Helmet>
@@ -56,7 +56,7 @@ const Trainer = () => {
           </h2>
 
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mx-auto mt-8 gap-4">
-            {team?.map((trainer, i) => (
+            {trainers?.map((trainer, i) => (
               <TeamCard key={i} trainer={trainer}></TeamCard>
             ))}
           </div>

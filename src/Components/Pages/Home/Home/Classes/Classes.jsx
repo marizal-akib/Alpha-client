@@ -1,6 +1,5 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination } from "swiper/modules";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";

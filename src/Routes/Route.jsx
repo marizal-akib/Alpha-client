@@ -18,6 +18,14 @@ import ClassDetails from "../Components/Pages/Classes/ClassDetails";
 import AllSubscribers from "../Components/Dashboard/AdimDash/AllSubscribers";
 import AllTrainers from "../Components/Dashboard/AdimDash/AllTrainers/AllTrainers";
 import Applications from "../Components/Dashboard/AdimDash/Application/Applications";
+import Balance from "../Components/Dashboard/AdimDash/Balance/Balance";
+import ClassManagement from "../Components/Dashboard/TrainerDash/ClassManagement";
+import MemberManagement from "../Components/Dashboard/TrainerDash/MemberManagement";
+import AddNewClass from "../Components/Dashboard/TrainerDash/AddNewClass";
+import Activity from "../Components/Dashboard/UserDash/Activity";
+import ProfileSetting from "../Components/Dashboard/UserDash/ProfileSetting";
+import Recommendations from "../Components/Dashboard/UserDash/Recommendations";
+import ForumPost from "../Components/Dashboard/ForumPost";
 // import Applications from "../Components/Dashboard/AdimDash/AllTrainers/Applications";
 // import Book from "../Components/Pages/Trainer/Book.jsx";
 
@@ -85,13 +93,17 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/team/${params.id}`),
+          fetch(`http://localhost:5000/user/${params.id}`),
       },
     ],
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRoutes>
+        <Dashboard></Dashboard>,
+      </PrivateRoutes>
+    ),
     children: [
       {
         path: "subscribers",
@@ -107,12 +119,37 @@ export const router = createBrowserRouter([
       },
       {
         path: "balance",
-        element: <Applications></Applications>,
+        element: <Balance></Balance>,
+      },
+      {
+        path: "addPost",
+        element: <ForumPost></ForumPost>,
+      },
+      // trainer
+      {
+        path: "management",
+        element: <ClassManagement></ClassManagement>,
+      },
+      {
+        path: "memberManagement",
+        element: <MemberManagement></MemberManagement>,
+      },
+      {
+        path: "addNewClass",
+        element: <AddNewClass></AddNewClass>,
       },
       // user
       {
-        // path: "userHome",
-        // element: <UserHome></UserHome>,
+        path: "setting",
+        element: <ProfileSetting></ProfileSetting>,
+      },
+      {
+        path: "activity",
+        element: <Activity></Activity>,
+      },
+      {
+        path: "recommendations",
+        element: <Recommendations></Recommendations>,
       },
     ],
   },

@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const PCard = ({ sub, bookInfo }) => {
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
-  const {trainer_id, trainer_name, slotBooked, name, email, profilePic } = bookInfo;
+  const { trainer_id, trainer_name, slotBooked, name, email, profilePic } =
+    bookInfo;
   const { plan, description, price } = sub;
 
   const handleBooking = async () => {
     const bookInfo = {
-
       trainer_id,
       trainer_name,
       slotBooked,
@@ -34,6 +34,14 @@ const PCard = ({ sub, bookInfo }) => {
         timer: 3500,
       });
       navigate("/payment");
+    } else if (res.data.message) {
+      Swal.fire({
+        position: "top-end",
+        icon: "info",
+        title: `${res.data.message}`,
+        showConfirmButton: false,
+        timer: 3500,
+      });
     }
   };
   return (

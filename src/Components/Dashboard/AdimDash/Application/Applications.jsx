@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
 import ApplicationTabs from "./ApplicationTabs";
 
 
 const Applications = () => {
-  const axiosPublic = useAxiosPublic();
-  const { refetch, data: applications = [] } = useQuery({
+  const axiosSecure = useAxiosSecure();
+  const { isLoading : loading, refetch, data: applications = [] } = useQuery({
     queryKey: ["applications"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/apply");
+      const res = await axiosSecure.get("/apply");
       return res.data;
     },
   });
@@ -33,7 +33,7 @@ const Applications = () => {
             </tr>
           </thead>
           {applications.map((application, i) => (
-            <ApplicationTabs key={i} refetch={refetch} application={application} i={i}></ApplicationTabs>
+            <ApplicationTabs key={i} refetch={refetch} loading={loading} application={application} i={i}></ApplicationTabs>
           ))}
         </table>
       </div>

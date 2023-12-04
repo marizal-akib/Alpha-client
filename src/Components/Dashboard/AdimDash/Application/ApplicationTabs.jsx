@@ -2,41 +2,51 @@
 
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const ApplicationTabs = ({ application, i, refetch }) => {
-  const axiosPublic = useAxiosPublic();
+const ApplicationTabs = ({ loading, application, i, refetch }) => {
+  const axiosSecure = useAxiosSecure();
   const {
     _id,
     name,
     email,
+    years_of_experience,
     age,
     week,
     time,
     other,
-
+    specialty,
     checkbox: skill,
     image: img,
   } = application;
 
   const handelAccept = async (email) => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const formattedDate = `${year}-${month}-${day}`;
+    console.log(formattedDate);
     const accept = {
       _id,
-
+      years_of_experience,
       email,
       age,
       week,
       time,
       other,
-
+      specialty,
+      joined: formattedDate,
+      lastPaid: formattedDate,
       skill,
       img,
       role: "trainer",
     };
 
     console.log(accept, _id);
-    const res = await axiosPublic.patch(`/accept/${email}`, accept);
+    const res = await axiosSecure.patch(`/accept/${email}`, accept);
     console.log(res.data);
     if (res.data.acceptResult.modifiedCount > 0) {
       refetch();
@@ -97,9 +107,21 @@ const ApplicationTabs = ({ application, i, refetch }) => {
               <div>
                 <h3 className="font-bold text-sm">Soft Skills :-</h3>
                 <ul>
-                  <li>{skill[0]}</li>
-                  <li>{skill[1]}</li>
-                  <li>{skill[2]}</li>
+                  {loading ? (
+                    <span className="loading loading-spinner text-success"></span>
+                  ) : (
+                    <li>{skill[0]}</li>
+                  )}
+                  {loading ? (
+                    <span className="loading loading-spinner text-success"></span>
+                  ) : (
+                    <li>{skill[1]}</li>
+                  )}
+                  {loading ? (
+                    <span className="loading loading-spinner text-success"></span>
+                  ) : (
+                    <li>{skill[2]}</li>
+                  )}
                 </ul>
               </div>
               <div className="modal-action">

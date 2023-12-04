@@ -25,11 +25,13 @@ const Navbar = () => {
       <li>
         <NavLink to="/forums">Forums</NavLink>
       </li>
-      <li>
-        <NavLink className="font-semibold text-[#f47520]" to="/dashboard">
-          Dashboard
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink className="font-semibold text-[#f47520]" to="/dashboard">
+            Dashboard
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (

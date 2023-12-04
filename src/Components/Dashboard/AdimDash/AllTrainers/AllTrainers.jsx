@@ -1,19 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import Tabs from "./Tabs";
 import { Helmet } from "react-helmet-async";
 
 const AllTrainers = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { refetch, data: trainers = [] } = useQuery({
     queryKey: ["trainers"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/team");
+      const res = await axiosSecure.get("/team");
       return res.data;
     },
   });
 
 
+  const { data: allTrainers = [] } = useQuery({
+    queryKey: ["allTrainers"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/trainer");
+      return res.data;
+    },
+  });
   
 
   return (
@@ -35,6 +42,9 @@ const AllTrainers = () => {
           </thead>
           {
             trainers.map((trainer, i) => <Tabs key={i} refetch={refetch} trainer={trainer} i={i}></Tabs>)
+          }
+          {
+            allTrainers.map((trainer, i) => <Tabs key={i} refetch={refetch} trainer={trainer} i={i}></Tabs>)
           }
          
         </table>

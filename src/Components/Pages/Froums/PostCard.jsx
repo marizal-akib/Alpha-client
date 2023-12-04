@@ -9,7 +9,7 @@ const PostCard = ({ post: posts,refetch }) => {
     const { _id, vote, userName, role,  title, img, post } =
     posts;
   const handleUp = async () => {
-    if(vote){
+    if(vote || vote === 0){
 
       const upVote = vote + 1;
       const newVote ={
@@ -25,7 +25,7 @@ const PostCard = ({ post: posts,refetch }) => {
     }
   };
   const handleDown = async () => {
-    if (vote) {
+    if (vote || vote === 0) {
       const downVote = vote - 1;
       const ote ={
         vote : downVote
@@ -58,11 +58,7 @@ const PostCard = ({ post: posts,refetch }) => {
         </div>
         <h2 className="card-title text-[#f47520]">{title}</h2>
         <p className="text-gray-500">
-          {post.slice(0, 80)}
-          <Link to={`/forums/${_id}`} className=" text-[#f47520]">
-            {" "}
-            ...Read More
-          </Link>
+          {post}
         </p>
         <div className="flex card-actions align-baseline flex-row justify-end">
 

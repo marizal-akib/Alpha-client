@@ -1,12 +1,32 @@
 import { Helmet } from "react-helmet-async";
 import { NavLink, Outlet } from "react-router-dom";
-import { ImBlog, ImCoinDollar } from "react-icons/im";
+import { ImBlog } from "react-icons/im";
 import { MdOutlineSportsGymnastics } from "react-icons/md";
 import useAuth from "../../Hooks/useAuth";
-import { FaCalendar, FaDumbbell, FaFolder, FaHome, FaUser } from "react-icons/fa";
+import {
+  FaCalendar,
+  FaCalendarPlus,
+  FaClipboardList,
+  FaDollarSign,
+  FaDumbbell,
+  FaEdit,
+  FaFolder,
+  FaHome,
+  FaUser,
+  FaUserEdit,
+  FaUsersCog,
+  // FaUsersSlash,
+} from "react-icons/fa";
+import useAdmin from "../../Hooks/useAdmin";
+import useMember from "../../Hooks/useMember";
+import useTrainer from "../../Hooks/useTrainer";
 
 const Dashboard = () => {
   const { user, loading } = useAuth();
+
+  const [isAdmin] = useAdmin();
+  const [isUser] = useMember();
+  const [isTrainer] = useTrainer();
   return (
     <>
       <Helmet>
@@ -22,11 +42,18 @@ const Dashboard = () => {
                 {loading ? (
                   <span className="loading rounded-full loading-spinner text-success"></span>
                 ) : (
-                  <img className="w-28  mx-auto " src={user.photoURL} />
+                  <img className="w-28  mx-auto " src={user?.photoURL} />
                 )}
                 <h2 className="text-center font-semibold text-white my-2 ">
                   {user?.displayName}
                 </h2>
+                <div className="text-center flex flex-row-reverse gap-1 mr-32">
+                <div className=""><FaUser></FaUser></div>
+                <h2 className="text-center items-center font-semibold text-white my-2 ">
+                 {user?.role} 
+                </h2>
+                </div>
+               
               </div>
             </>
           )}
@@ -38,37 +65,86 @@ const Dashboard = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/subscribers">
-                <ImBlog></ImBlog> All subscribers
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/allTrainers">
-                <MdOutlineSportsGymnastics /> All Trainers
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/application">
-                <FaFolder />Trainer Application
-              </NavLink>
-            </li>
-            {/* user */}
-            <li>
-              <NavLink to="/dashboard/activity">
-                <FaDumbbell></FaDumbbell> Activity Log 
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/balance">
-                <FaCalendar></FaCalendar> Recommendation 
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/setting">
-                <FaUser></FaUser> Accounts 
-              </NavLink>
-            </li>
+            {isAdmin && (
+              <>
+                <div className="divider"></div>
+                <li>
+                  <NavLink to="/dashboard/subscribers">
+                    <ImBlog></ImBlog> All subscribers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addPost">
+                    <FaEdit></FaEdit> Add Post
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/allTrainers">
+                    <MdOutlineSportsGymnastics /> All Trainers
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/application">
+                    <FaFolder />
+                    Trainer Application
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/balance">
+                    <FaDollarSign />
+                    Accounts
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {isTrainer && (
+              <>
+                {" "}
+                <div className="divider"></div>
+                <li>
+                  <NavLink to="/dashboard/addPost">
+                    <FaEdit></FaEdit> Add Post
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/management">
+                    <FaClipboardList></FaClipboardList> Class Management
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/memberManagement">
+                    <FaUsersCog></FaUsersCog> Member Management
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addNewClass">
+                    <FaCalendarPlus></FaCalendarPlus> Add New Class
+                  </NavLink>
+                </li>
+              </>
+            )}
+
+            {isUser && (
+              <>
+                {" "}
+                <div className="divider"></div>
+                <li>
+                  <NavLink to="/dashboard/activity">
+                    <FaDumbbell></FaDumbbell> Activity Log
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/setting">
+                    <FaUserEdit></FaUserEdit> Profile Setting
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/recommendations">
+                    <FaCalendar></FaCalendar> Recommendations
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="flex-1">

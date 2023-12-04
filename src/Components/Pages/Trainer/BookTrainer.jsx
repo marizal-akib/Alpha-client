@@ -7,7 +7,7 @@ import useAuth from "../../../Hooks/useAuth";
 
 const BookTrainer = () => {
   const trainer = useLoaderData();
-//   console.log(trainer);
+  console.log(trainer);
   const { register, handleSubmit } = useForm();
 
   const { user } = useAuth();
@@ -72,7 +72,6 @@ const BookTrainer = () => {
                 slots:-
               </label>
               <select {...register("slot")}>
-                <option value="">Select...</option>
                 {slots.map((set, i) => (
                   <option key={i} value={set + 1}>
                     Slot {set + 1}
