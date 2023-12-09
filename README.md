@@ -1,8 +1,42 @@
-# React + Vite
+# Alpha Fitness Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link: [Alpha Fitness Website](https://alpha-5a5a4.web.app)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication:** Implemented JWT-based authentication for secure user access.
+- **Engaging UI:** Utilizes React.js and Tailwind CSS for an interactive and visually appealing user interface.
+- **Structured Navigation:** Offers seamless navigation through various sections/pages using React Router.
+- **Backend Integration:** Employs Express.js and MongoDB for server-side operations and database management.
+- **Comprehensive Dashboard:** Provides admins with the ability to manage subscribers, trainers, and applications efficiently.
+
+## Technologies Used
+
+- **Frontend:**
+  - React.js
+  - React Router
+  - Tailwind CSS
+  - Firebase (User Authentication)
+  
+- **Backend:**
+  - Express.js
+  - MongoDB
+  - Node.js
+  - JWT for authentication
+  
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Run the frontend and backend servers using `npm start`.
+
+## Usage
+
+- Ensure MongoDB is running and configured for backend data storage.
+- Set up Firebase for authentication purposes.
+- Access different routes/endpoints to explore various functionalities.
+
+## Contributions
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
